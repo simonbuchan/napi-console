@@ -1,0 +1,26 @@
+{
+    "name": "@simonbuchan/console",
+    "version": "0.1.0",
+    "license": "MIT",
+    "gypfile": false,
+    "main": "prebuilds/win32-x64/node-napi.node",
+    "types": "index.d.ts",
+    "files": [
+        "prebuilds",
+        "binding.gyp",
+        "*.cc",
+        "index.d.ts"
+    ],
+    "scripts": {
+        "prepublish": "yarn -s run build",
+        "install": "echo Only using prebuilt output",
+        "build": "prebuildify --napi --target node@8.12.0"
+    },
+    "dependencies": {
+        "node-gyp-build": "^3.8.0"
+    },
+    "devDependencies": {
+        "node-addon-api": "^1.6.2",
+        "prebuildify": "^2.11.0"
+    }
+}
